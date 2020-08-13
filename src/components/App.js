@@ -5,6 +5,7 @@ import SortData from './SortData';
 import SearchData from './SearchData';
 import DisplayData from './DisplayData';
 import { retrivedObj } from '../actions';
+import CharacterList from "../containers/CharacterList";
 
 const AppContainer = () => {
   const [data, setData] = useState(retrivedObj);
@@ -40,11 +41,7 @@ const AppContainer = () => {
               <SortData sort = {sort}/>
             </div>
             <div className="ui four column doubling stackable grid">
-            {
-              data.map((data, index) => (
-                <DisplayData key={`${index}-${data.id}`} tile={data} />
-              ))
-            }
+              <CharacterList />
             </div>
           </div>
         </div>

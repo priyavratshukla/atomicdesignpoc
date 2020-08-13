@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import charactersReducer from './charactersReducer';
+import characters from "./characters";
 import _ from 'lodash';
 
 const filters = (state = { filters: {} }, action) => {
@@ -42,7 +43,7 @@ const content = (state = { entries: [] }, action) => {
 };
 
 const reducers = combineReducers({
-  characters: charactersReducer,
+  characters: characters,
   filters,
   content
 });
